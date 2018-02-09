@@ -44,7 +44,6 @@ class ViewController: UIViewController {
 
     @IBAction func numberPressed(sender: UIButton) {
         playSound()
-        
         runningNumber += "\(sender.tag)"
         outputLbl.text = runningNumber
     }
@@ -63,6 +62,9 @@ class ViewController: UIViewController {
     }
     @IBAction func onEqualPressed(sender: AnyObject) {
         processOperation(operation: currentOperation)
+    }
+    @IBAction func onClearPressed(sender: AnyObject) {
+        clear()
     }
     
     func playSound() {
@@ -102,6 +104,35 @@ class ViewController: UIViewController {
             
         }
     }
+    
+    func clear() {
+        playSound()
+        runningNumber = "0"
+        currentOperation = Operation.Empty
+        outputLbl.text = runningNumber
+    }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
